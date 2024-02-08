@@ -1,8 +1,8 @@
 import * as THREE from "three"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import planetCreate from "./planet"
-import textures from "./textures"
 import planets from "./planets"
+import textures from "./textures"
 
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(
@@ -41,7 +41,8 @@ const sunMaterial = new THREE.MeshBasicMaterial({ map: texture })
 const sun = new THREE.Mesh(sunGeometry, sunMaterial)
 scene.add(sun)
 
-let planetObjects: Map<string, object> = new Map<string, object>()
+
+let planetObjects: Map<string, { mesh: THREE.Mesh, obj: THREE.Object3D }> = new Map<string, { mesh: THREE.Mesh, obj: THREE.Object3D }>()
 
 planets.forEach((planet) => {
   const planetObj = {

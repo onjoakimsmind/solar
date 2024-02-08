@@ -32,7 +32,6 @@ const planetCreate = ({
   size,
   position,
   moon,
-  ring,
 }: Params) => {
   let pNormal: THREE.Texture | undefined
   if (normal) {
@@ -51,7 +50,7 @@ const planetCreate = ({
   obj.add(mesh)
 
   if (moon) {
-    const moonGeometry: THREE.SphereGeometry = new THREE.SphereGeometry(
+    /*const moonGeometry: THREE.SphereGeometry = new THREE.SphereGeometry(
       moon.size,
       64,
       32
@@ -62,7 +61,7 @@ const planetCreate = ({
     const moon: THREE.Mesh = new THREE.Mesh(moonGeometry, moonMaterial)
     const moonObj = new THREE.Object3D()
     moonObj.add(moon)
-    obj.add(moonObj)
+    obj.add(moonObj)*/
   }
 
   scene.add(obj)
